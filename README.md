@@ -22,7 +22,7 @@
 https://github.com/monishmonish/linux-chrome-recon/
 cd linux-chrome-recon/
 pip3 install pandas
-pip3 install pywget
+pip3 install wget
 ```
 ## To Run
 
