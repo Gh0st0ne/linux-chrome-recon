@@ -1,7 +1,9 @@
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 import subprocess
 import os
 from scandata import *
 from remove import *
+import socket
 def banner():
     print('''
        ________  ______  ____  __  _________
@@ -16,9 +18,12 @@ def banner():
                                         
     ''')
 def startserver():
-    from http.server import HTTPServer, SimpleHTTPRequestHandler
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    ip=(s.getsockname()[0])
+    s.close()
     os.chdir('/tmp/')
-    httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+    httpd = HTTPServer((ip, 8000), SimpleHTTPRequestHandler)
     httpd.serve_forever()
 
 if __name__ == "__main__":
