@@ -37,6 +37,12 @@ python3 receivedata.py
 ```
 Here the RHOST value must be the IP of the Victime machine
 
+Incase if you get any permission error while writing the data on attacker side
+Try,
+```
+sudo chmod 777 linux-chrome-recon
+```
+
 ## To-Dos
 If your are reading this...
 Make sure you can add more modules to this script and notify me..
